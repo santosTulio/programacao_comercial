@@ -1,3 +1,5 @@
-from django.shortcuts import render
-
-# Create your views here.
+from .VeiculoList import *
+from .VeiculoCreate import *
+from .VeiculoInfo import *
+from .VeiculoUpdate import *
+from .VeiculoDelete import *
