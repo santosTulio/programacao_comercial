@@ -1,21 +1,24 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .form import VeiculoCreateForm
+from django.utils.decorators import method_decorator
+
+from .form import FormularioVeiculo
 from django.views.generic import CreateView
 from ..models import *
 
-
+@method_decorator(login_required, name='dispatch')
 class VeiculoCreate(CreateView):
     """
     View para Criar veiculos cadastrados.
     """
     model = Veiculo
     template_name = 'veiculos/criar.html'
-    form_class = VeiculoCreateForm
+    form_class = FormularioVeiculo
 
     def post(self, request, *args, **kwargs):
-        form = VeiculoCreateForm(request.POST)
+        form = FormularioVeiculo(request.POST)
         if form.is_valid():
             veiculo = form.save()
             veiculo.save()

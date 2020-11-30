@@ -1,2 +1,1 @@
-from .VeiculoCreateFrom import *
-from .VeiculoUpdateForm import *
+from .FormularioVeiculo import *

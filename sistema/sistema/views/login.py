@@ -2,7 +2,7 @@ import logging
 
 from django.contrib.auth import authenticate,login
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 
 logger = logging.getLogger(__name__)
@@ -24,6 +24,6 @@ class Login(View):
         if user:
             if user.is_active:
                 login(req,user)
-                return HttpResponse("Usuario autencicado")
+                return redirect('/veiculos')
             return render(req,'login/login.html',{})
         return render(req,'login/login.html',{})
