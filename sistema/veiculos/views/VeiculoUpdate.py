@@ -8,9 +8,10 @@ from django.views.generic import UpdateView
 
 from .form.FormularioVeiculo import FormularioVeiculo
 from ..models import *
+from sistema.utilitarios import AutenticacaoObrigatoria
 
-@method_decorator(login_required, name='dispatch')
-class VeiculoUpdate(UpdateView):
+
+class VeiculoUpdate(AutenticacaoObrigatoria,UpdateView):
     """
     View para editar veiculos cadastrados.
     """

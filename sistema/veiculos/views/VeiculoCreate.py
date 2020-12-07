@@ -8,8 +8,9 @@ from .form import FormularioVeiculo
 from django.views.generic import CreateView
 from ..models import *
 
-@method_decorator(login_required, name='dispatch')
-class VeiculoCreate(CreateView):
+from sistema.utilitarios import AutenticacaoObrigatoria
+
+class VeiculoCreate(AutenticacaoObrigatoria,CreateView):
     """
     View para Criar veiculos cadastrados.
     """

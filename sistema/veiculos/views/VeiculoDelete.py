@@ -3,9 +3,10 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import DeleteView
 from ..models import *
+from sistema.utilitarios import AutenticacaoObrigatoria
 
-@method_decorator(login_required, name='dispatch')
-class VeiculoDelete(DeleteView):
+
+class VeiculoDelete(AutenticacaoObrigatoria,DeleteView):
     """
     View para deletar veiculos cadastrados.
     """

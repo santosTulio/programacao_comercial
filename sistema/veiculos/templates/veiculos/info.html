@@ -4,9 +4,9 @@
 {% block header%}Visualizar Veiculo{%endblock%}
 
 {% block container%}
-<h1 class="card-title pricing-card-title">{{veiculo.modelo}}<small class="text-muted">{{veiculo.marca}}</small></h1>
+<h1 class="card-title pricing-card-title">{{veiculo.modelo}} <small class="text-muted">{{veiculo.marca}}</small></h1>
 <ul class="list-unstyled mt-3 mb-4">
-	<li>Valor:{{veiculo.valor}}</li>
+	<li>Valor: R$ {{veiculo.valor}}</li>
 	<li>Ano:{{veiculo.ano_fabricacao}}/{{veiculo.modelo_fabricacao}}</li>
 	<li>Combustivel: {{veiculo.get_combustivel_display}}</li>
 </ul>

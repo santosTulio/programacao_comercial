@@ -2,9 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView
 from ..models import *
+from sistema.utilitarios import AutenticacaoObrigatoria
 
-@method_decorator(login_required, name='dispatch')
-class VeiculoInfo(DetailView):
+
+class VeiculoInfo(AutenticacaoObrigatoria, DetailView):
     """
     View para Detalhar veiculos cadastrados.
     """
