@@ -1,5 +1,5 @@
 from django.contrib import admin
-from veiculos.models import *
+from ..models import Veiculo
 
 class VeiculoAdmin(admin.ModelAdmin):
     """
@@ -8,5 +8,6 @@ class VeiculoAdmin(admin.ModelAdmin):
     list_display = ['marca', 'modelo', 'ano_fabricacao', 'modelo_fabricacao', 'combustivel']
     search_fields = ['marca', 'modelo']
     list_filter = ['combustivel']
+    exclude = []
 
 admin.site.register(Veiculo, VeiculoAdmin)

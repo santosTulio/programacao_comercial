@@ -1,7 +1,6 @@
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 from django.views.generic import DetailView
-from ..models import *
+from veiculos.models import Veiculo
+
 from sistema.utilitarios import AutenticacaoObrigatoria
 
 

@@ -1,6 +1,6 @@
 from django import forms
 
-from ...models import Veiculo
+from veiculos.models import Veiculo
 
 
 class FormularioVeiculo(forms.ModelForm):

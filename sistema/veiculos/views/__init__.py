@@ -1,7 +1,7 @@
-from .VeiculoList import *
-from .VeiculoCreate import *
-from .VeiculoInfo import *
-from .VeiculoUpdate import *
-from .VeiculoDelete import *
+from .VeiculoList import VeiculosList
+from .VeiculoCreate import VeiculoCreate
+from .VeiculoInfo import VeiculoInfo
+from .VeiculoUpdate import VeiculoUpdate
+from .VeiculoDelete import VeiculoDelete
 
 from .Api import VeiculosListAPI

@@ -4,9 +4,9 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 
-from .form import FormularioVeiculo
+from veiculos.views.form import FormularioVeiculo
 from django.views.generic import CreateView
-from ..models import *
+from veiculos.models import Veiculo
 
 from sistema.utilitarios import AutenticacaoObrigatoria
 

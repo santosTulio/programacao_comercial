@@ -1,13 +1,17 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
-from . import views
+from veiculos.views import VeiculoUpdate
+from veiculos.views import VeiculosList
+from veiculos.views import VeiculoInfo
+from veiculos.views import VeiculoCreate
+from veiculos.views import VeiculoDelete
+from veiculos.views import VeiculosListAPI
 
 urlpatterns = [
-    path('', views.VeiculosList.as_view(),name='listar-veiculos'),
-    path('criar/', views.VeiculoCreate.as_view(), name='criar-veiculo'),
-    path('editar/<int:pk>', views.VeiculoUpdate.as_view(), name='editar-veiculo'),
-    path('deletar/<int:pk>', views.VeiculoDelete.as_view(), name='deletar-veiculo'),
-    path('<int:pk>', views.VeiculoInfo.as_view(), name='info-veiculo'),
-    path('api/listar/', views.VeiculosListAPI.as_view(), name='api-listar-veiculo'),
+    path('', VeiculosList.as_view(),name='listar-veiculos'),
+    path('criar/', VeiculoCreate.as_view(), name='criar-veiculo'),
+    path('editar/<int:pk>', VeiculoUpdate.as_view(), name='editar-veiculo'),
+    path('deletar/<int:pk>', VeiculoDelete.as_view(), name='deletar-veiculo'),
+    path('<int:pk>', VeiculoInfo.as_view(), name='info-veiculo'),
+    path('api/listar/', VeiculosListAPI.as_view(), name='api-listar-veiculo'),
 ]

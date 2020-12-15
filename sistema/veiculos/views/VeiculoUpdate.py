@@ -1,13 +1,12 @@
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.utils.decorators import method_decorator
 
 from django.views.generic import UpdateView
 
-from .form.FormularioVeiculo import FormularioVeiculo
-from ..models import *
+from veiculos.views.form.FormularioVeiculo import FormularioVeiculo
+from veiculos.models import Veiculo
+
 from sistema.utilitarios import AutenticacaoObrigatoria
 
 
